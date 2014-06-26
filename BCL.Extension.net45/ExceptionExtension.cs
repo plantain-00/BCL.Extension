@@ -13,7 +13,7 @@ namespace BCL.Extension
         /// <param name="condition"></param>
         /// <param name="message"></param>
         /// <exception cref="Exception"></exception>
-        public static void OrThrows(this bool condition, string message = null)
+        public static void OrThrow(this bool condition, string message = null)
         {
             if (!condition)
             {
@@ -26,7 +26,7 @@ namespace BCL.Extension
         /// <param name="condition"></param>
         /// <param name="message"></param>
         /// <exception cref="Exception"></exception>
-        public static void ThenThrows(this bool condition, string message = null)
+        public static void ThenThrow(this bool condition, string message = null)
         {
             if (condition)
             {
@@ -34,73 +34,41 @@ namespace BCL.Extension
             }
         }
         /// <summary>
-        ///     如果condition为True，则抛出异常
-        /// </summary>
-        /// <param name="condition"></param>
-        /// <exception cref="Exception"></exception>
-        public static void ThrowIf(bool condition)
-        {
-            if (condition)
-            {
-                throw new Exception();
-            }
-        }
-        /// <summary>
-        ///     如果condition为True，则抛出异常
-        /// </summary>
-        /// <param name="condition"></param>
-        /// <param name="message"></param>
-        /// <exception cref="Exception"></exception>
-        public static void ThrowIf(bool condition, string message)
-        {
-            if (message == null)
-            {
-                throw new Exception("message");
-            }
-            if (condition)
-            {
-                throw new Exception(message);
-            }
-        }
-        /// <summary>
-        ///     如果condition为True，则抛出参数异常
-        /// </summary>
-        /// <param name="condition"></param>
-        /// <exception cref="ArgumentException"></exception>
-        public static void ThrowIfArgument(bool condition)
-        {
-            if (condition)
-            {
-                throw new ArgumentException();
-            }
-        }
-        /// <summary>
-        ///     如果condition为True，则抛出参数异常
+        ///     否则抛出异常
         /// </summary>
         /// <param name="condition"></param>
         /// <param name="message"></param>
         /// <exception cref="ArgumentException"></exception>
-        public static void ThrowIfArgument(bool condition, string message)
+        public static void OrThrowArgument(this bool condition, string message = null)
         {
-            if (message == null)
+            if (!condition)
             {
-                throw new ArgumentException("message");
+                throw new ArgumentException(message ?? "");
             }
+        }
+        /// <summary>
+        ///     则抛出异常
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <param name="message"></param>
+        /// <exception cref="ArgumentException"></exception>
+        public static void ThenThrowArgument(this bool condition, string message = null)
+        {
             if (condition)
             {
-                throw new ArgumentException(message);
+                throw new ArgumentException(message ?? "");
             }
         }
         /// <summary>
         ///     如果condition为null，则抛出参数为空异常
         /// </summary>
-        /// <param name="condition"></param>
+        /// <param name="argument"></param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static void ThrowIfArgumentIsNull(this object condition)
+        public static void IsNullThenThrow(this object argument)
         {
-            if (condition == null)
+            if (argument == null)
             {
-                throw new ArgumentNullException("condition");
+                throw new ArgumentNullException("argument");
             }
         }
     }

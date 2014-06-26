@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCL.Extension.net45", "BCL.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCL.Extension.net40", "BCL.Extension.net40\BCL.Extension.net40.csproj", "{50BD887B-B4F1-4033-AC7F-97ADCBBE1698}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCL.Extension.net35", "BCL.Extension.net35\BCL.Extension.net35.csproj", "{C8B5D3E7-5C55-450A-A5A6-0639D2116124}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{50BD887B-B4F1-4033-AC7F-97ADCBBE1698}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50BD887B-B4F1-4033-AC7F-97ADCBBE1698}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50BD887B-B4F1-4033-AC7F-97ADCBBE1698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8B5D3E7-5C55-450A-A5A6-0639D2116124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8B5D3E7-5C55-450A-A5A6-0639D2116124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8B5D3E7-5C55-450A-A5A6-0639D2116124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8B5D3E7-5C55-450A-A5A6-0639D2116124}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

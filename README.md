@@ -7,3 +7,4 @@ Extension to types from Basic Class Library.
     args.Length.IsNullThenThrow();
 ## DateTime
     DateTime.Now.ToInt32();//1403860977
+## DateTable

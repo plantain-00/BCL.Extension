@@ -1,4 +1,6 @@
-﻿namespace BCL.Extension.Example.net35
+﻿using System;
+
+namespace BCL.Extension.Example.net35
 {
     internal class Program
     {
@@ -6,6 +8,7 @@
         {
             (args.Length == 0).OrThrow();
             args.Length.IsNullThenThrow();
+            var time = DateTime.Now.ToInt32();
         }
     }
 }

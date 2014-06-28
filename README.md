@@ -5,7 +5,7 @@ Extension to types from Basic Class Library.
 ## Exception
     (args.Length == 0).OrThrow();
 	(args.Length != 0).ThenThrow("length equals 0");
-    args.Length.IsNullThenThrow();
+    args.IsNullThenThrow();
 ## DateTime
     DateTime.Now.ToInt32();//1403980977
 	var date = 1403980977.ToDateTime();//2014/6/28 星期六 18:42:57

@@ -8,8 +8,10 @@ namespace BCL.Extension.Example.net35
         private static void Main(string[] args)
         {
             (args.Length == 0).OrThrow();
-            args.Length.IsNullThenThrow();
+            (args.Length != 0).ThenThrow("length equals 0");
+            args.IsNullThenThrow();
             var time = DateTime.Now.ToInt32();
+            var date = 1403980977.ToDateTime();
             var datatable = new DataTable();
             var column1 = new DataColumn
                           {

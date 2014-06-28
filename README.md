@@ -4,9 +4,11 @@ BCL.Extension
 Extension to types from Basic Class Library.
 ## Exception
     (args.Length == 0).OrThrow();
+	(args.Length != 0).ThenThrow("length equals 0");
     args.Length.IsNullThenThrow();
 ## DateTime
-    DateTime.Now.ToInt32();//1403860977
+    DateTime.Now.ToInt32();//1403980977
+	var date = 1403980977.ToDateTime();//2014/6/28 ÐÇÆÚÁù 18:42:57
 ## DateTable
     public class TestModel
     {

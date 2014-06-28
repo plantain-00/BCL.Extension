@@ -8,7 +8,7 @@ Extension to types from Basic Class Library.
     args.Length.IsNullThenThrow();
 ## DateTime
     DateTime.Now.ToInt32();//1403980977
-	var date = 1403980977.ToDateTime();//2014/6/28 ÐÇÆÚÁù 18:42:57
+	var date = 1403980977.ToDateTime();//2014/6/28 æ˜ŸæœŸå…­ 18:42:57
 ## DateTable
     public class TestModel
     {

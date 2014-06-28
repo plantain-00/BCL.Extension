@@ -13,7 +13,11 @@ namespace BCL.Extension
         /// <param name="condition"></param>
         /// <param name="message"></param>
         /// <exception cref="Exception"></exception>
+#if NET30 || NET20
+        public static void OrThrow(bool condition, string message = null)
+#else
         public static void OrThrow(this bool condition, string message = null)
+#endif
         {
             if (!condition)
             {
@@ -26,7 +30,11 @@ namespace BCL.Extension
         /// <param name="condition"></param>
         /// <param name="message"></param>
         /// <exception cref="Exception"></exception>
+#if NET30 || NET20
+        public static void ThenThrow(bool condition, string message = null)
+#else
         public static void ThenThrow(this bool condition, string message = null)
+#endif
         {
             if (condition)
             {
@@ -39,7 +47,11 @@ namespace BCL.Extension
         /// <param name="condition"></param>
         /// <param name="message"></param>
         /// <exception cref="ArgumentException"></exception>
+#if NET30 || NET20
+        public static void OrThrowArgument(bool condition, string message = null)
+#else
         public static void OrThrowArgument(this bool condition, string message = null)
+#endif
         {
             if (!condition)
             {
@@ -52,7 +64,11 @@ namespace BCL.Extension
         /// <param name="condition"></param>
         /// <param name="message"></param>
         /// <exception cref="ArgumentException"></exception>
+#if NET30 || NET20
+        public static void ThenThrowArgument(bool condition, string message = null)
+#else
         public static void ThenThrowArgument(this bool condition, string message = null)
+#endif
         {
             if (condition)
             {
@@ -64,7 +80,11 @@ namespace BCL.Extension
         /// </summary>
         /// <param name="argument"></param>
         /// <exception cref="ArgumentNullException"></exception>
+#if NET30 || NET20
+        public static void IsNullThenThrow(object argument)
+#else
         public static void IsNullThenThrow(this object argument)
+#endif
         {
             if (argument == null)
             {

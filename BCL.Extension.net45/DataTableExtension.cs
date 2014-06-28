@@ -16,7 +16,11 @@ namespace BCL.Extension
         /// <param name="dt"></param>
         /// <typeparam name="TResult"></typeparam>
         /// <returns></returns>
+#if NET30 || NET20
+        public static List<TResult> ToList<TResult>(DataTable dt) where TResult : class, new()
+#else
         public static List<TResult> ToList<TResult>(this DataTable dt) where TResult : class, new()
+#endif
         {
             var prlist = new List<PropertyInfo>();
             var t = typeof (TResult);

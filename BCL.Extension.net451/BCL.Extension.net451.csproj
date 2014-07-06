@@ -42,6 +42,7 @@
     <Compile Include="..\BCL.Extension.net45\ExceptionExtension.cs" />
     <Compile Include="..\BCL.Extension.net45\DataTableExtension.cs" />
 	<Compile Include="..\BCL.Extension.net45\Properties\AssemblyInfo.cs" />
+	<Compile Include="..\BCL.Extension.net45\QueryableExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

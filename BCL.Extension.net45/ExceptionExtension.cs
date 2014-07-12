@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace BCL.Extension
 {
@@ -91,5 +92,23 @@ namespace BCL.Extension
                 throw new ArgumentNullException("argument");
             }
         }
+#if !NET30 && !NET20
+        /// <summary>
+        ///     异常的完整信息
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static string FullMessage(this Exception exception)
+        {
+            var result = new StringBuilder();
+            while (exception != null)
+            {
+                result.AppendLine(exception.Message);
+                result.AppendLine(exception.StackTrace);
+                exception = exception.InnerException;
+            }
+            return result.ToString();
+        }
+#endif
     }
 }

@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Text;
+#if !NET30 && !NET20 && !NET35
+using System.Data.Entity.Validation;
+
+#endif
 
 namespace BCL.Extension
 {
@@ -92,7 +96,7 @@ namespace BCL.Extension
                 throw new ArgumentNullException("argument");
             }
         }
-#if !NET30 && !NET20
+#if !NET30 && !NET20 && !NET35
         /// <summary>
         ///     异常的完整信息
         /// </summary>
@@ -103,6 +107,16 @@ namespace BCL.Extension
             var result = new StringBuilder();
             while (exception != null)
             {
+                if (exception is DbEntityValidationException)
+                {
+                    foreach (var error in (exception as DbEntityValidationException).EntityValidationErrors)
+                    {
+                        foreach (var validationError in error.ValidationErrors)
+                        {
+                            result.AppendLine(string.Format("{0}:{1}", validationError.PropertyName, validationError.ErrorMessage));
+                        }
+                    }
+                }
                 result.AppendLine(exception.Message);
                 result.AppendLine(exception.StackTrace);
                 exception = exception.InnerException;

@@ -48,6 +48,7 @@
     <Compile Include="ExceptionExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryableExtension.cs" />
+    <Compile Include="XmlConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
